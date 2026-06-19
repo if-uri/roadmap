@@ -47,5 +47,6 @@ function e(string $s): string { return htmlspecialchars($s, ENT_QUOTES); }
   </main>
 </div>
 <footer>ifURI roadmap · synced from <a href="<?= e($ghDir) ?>"><?= e($cfg['owner'] . '/' . $cfg['repo']) ?></a> · <a href="https://ifuri.com/">ifuri.com</a></footer>
+<script src="https://ifuri.com/assets/ifuri-ecobar.js" defer></script>
 </body>
 </html>
