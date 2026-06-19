@@ -1,0 +1,12 @@
+{
+  "title": "ifURI / urirun roadmap",
+  "docs": [
+    {"slug": "00-roadmap", "file": "00-roadmap.md", "title": "Roadmap"},
+    {"slug": "10-app-desktop", "file": "10-app-desktop.md", "title": "App — desktop"},
+    {"slug": "20-get-node", "file": "20-get-node.md", "title": "get — node installer"},
+    {"slug": "30-connect-connectors", "file": "30-connect-connectors.md", "title": "connect + connectors"},
+    {"slug": "40-urirun", "file": "40-urirun.md", "title": "urirun packaging"},
+    {"slug": "50-cicd", "file": "50-cicd.md", "title": "CI/CD"},
+    {"slug": "60-reuse", "file": "60-reuse.md", "title": "Reuse / integrations"}
+  ]
+}
