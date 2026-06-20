@@ -2,7 +2,7 @@
 
 Generated from the shared execution backlog at `if-uri/.planfile`. Status comes from each ticket's execution state. This page is regenerated - edit tickets in the planfile, not here.
 
-Tickets: 19 (planned: 12 · released: 7). Last generated 2026-06-20.
+Tickets: 19 (planned: 11 · released: 8). Last generated 2026-06-20.
 
 Status values: **planned** (queued/not started), **in-progress** (running), **verified** (acceptance checks passed), **released** (execution done).
 
@@ -10,7 +10,7 @@ Status values: **planned** (queued/not started), **in-progress** (running), **ve
 
 | Ticket | Status | Summary | Blocked by |
 |---|---|---|---|
-| IFURI-008 | planned | After installing connectors, urirun should discover entry points, generate bindings/registry and expose them… | - |
+| IFURI-008 | released | After installing connectors, urirun should discover entry points, generate bindings/registry and expose them… | - |
 | IFURI-009 | planned | Create or consolidate a Docker smoke that starts host plus two nodes, installs connectors, generates registry… | - |
 | IFURI-010 | planned | The desktop app should make it obvious what devices, processes, connectors and URI commands are available, an… | - |
 | IFURI-011 | planned | The main public site should have the same local commands and workflow gates as get/connect/docs: smoke, docke… | - |

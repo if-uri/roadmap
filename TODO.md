@@ -7,6 +7,8 @@
 - [ ] Track IFURI-015..IFURI-019 through the roadmap until core extraction,
       connector matrix testing, app GUI install, connector contract pages and
       installer doctor checks are verified.
+- [x] Track IFURI-008 until installed connectors can expose entry-point
+      bindings and generate a registry without manual JSON merging.
 - [x] Track IFURI-020 until `.planfile/sprints/*.yaml` has a supported
       validation/health-check path. (`--file-type sprint`, health bucket fix)
 - [ ] Review active namespace references monthly; public install commands should

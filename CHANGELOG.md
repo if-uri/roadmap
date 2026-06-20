@@ -16,5 +16,7 @@
 - Document roadmap.ifuri.com as the planning layer for the broader ifURI /
   urirun ecosystem.
 - Point active roadmap runtime references at the `if-uri/urirun` namespace.
+- Mark IFURI-008 connector entry-point discovery as released and document the
+  `urirun discover` / `urirun compile --entry-points` workflow.
 - Mark IFURI-020 as released and document the validated planfile sprint/health
   commands.
