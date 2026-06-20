@@ -7,8 +7,8 @@
 - [ ] Track IFURI-015..IFURI-019 through the roadmap until core extraction,
       connector matrix testing, app GUI install, connector contract pages and
       installer doctor checks are verified.
-- [ ] Track IFURI-020 until `.planfile/sprints/*.yaml` has a supported
-      validation/health-check path.
+- [x] Track IFURI-020 until `.planfile/sprints/*.yaml` has a supported
+      validation/health-check path. (`--file-type sprint`, health bucket fix)
 - [ ] Review active namespace references monthly; public install commands should
       use `github.com/if-uri/urirun`, while old `tellmesh/*` mentions should be
       historical only.

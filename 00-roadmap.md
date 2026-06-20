@@ -18,6 +18,9 @@ so tasks can cover all repos together.
 - **Connectors**: browser-control, http-check, time-tools, planfile,
   domain-monitor, namecheap-dns and sqlite-context have local Makefiles, tests
   and Docker smoke environments; the next proof is a shared host-node matrix.
+- **Planfile tooling**: local sprint files validate with
+  `planfile validate schema .planfile/sprints/current.yaml --file-type sprint`,
+  and `planfile health check` no longer crashes on generated issue buckets.
 
 ## What's next (by priority)
 - **P0** — make install/release/test deterministic: keep active install paths on
@@ -48,6 +51,7 @@ Each entry links its repository, docs page and a demo command.
 | noVNC LAN flow (four computers) | released | [examples/11-novnc_lan_flow](https://github.com/if-uri/examples/tree/main/11-novnc_lan_flow) | [docs.ifuri.com/novnc-demo.html](https://docs.ifuri.com/novnc-demo.html) | `make test-full` |
 | Connector install / discovery | in-progress | [if-uri/connect.ifuri.com](https://github.com/if-uri/connect.ifuri.com) | [docs.ifuri.com/connectors.html](https://docs.ifuri.com/connectors.html) | `connect.ifuri.com/install?connectors=http-check` |
 | get.ifuri.com node installer | released | [if-uri/get](https://github.com/if-uri/get) | [docs.ifuri.com/host-node-lan.html](https://docs.ifuri.com/host-node-lan.html) | `get.ifuri.com/node.sh` |
+| Planfile validation / health | released | [semcod/planfile](https://github.com/semcod/planfile) | [90-planfile.md](90-planfile.md) | `planfile validate schema .planfile/sprints/current.yaml --file-type sprint` |
 
 ## Files
 - [10-app-desktop.md](10-app-desktop.md) — ifURI desktop app (packaging, Tauri, updates)

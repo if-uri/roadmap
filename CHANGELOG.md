@@ -16,3 +16,5 @@
 - Document roadmap.ifuri.com as the planning layer for the broader ifURI /
   urirun ecosystem.
 - Point active roadmap runtime references at the `if-uri/urirun` namespace.
+- Mark IFURI-020 as released and document the validated planfile sprint/health
+  commands.

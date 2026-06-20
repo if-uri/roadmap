@@ -2,7 +2,7 @@
 
 Generated from the shared execution backlog at `if-uri/.planfile`. Status comes from each ticket's execution state. This page is regenerated - edit tickets in the planfile, not here.
 
-Tickets: 19 (planned: 13 · released: 6). Last generated 2026-06-20.
+Tickets: 19 (planned: 12 · released: 7). Last generated 2026-06-20.
 
 Status values: **planned** (queued/not started), **in-progress** (running), **verified** (acceptance checks passed), **released** (execution done).
 
@@ -21,7 +21,7 @@ Status values: **planned** (queued/not started), **in-progress** (running), **ve
 | IFURI-017 | planned | The desktop/web operator UI should consume the connector hub catalog, install selected connector packages, re… | - |
 | IFURI-018 | planned | Each connector page should show install snippets, supported URI routes, payload schemas, Docker smoke command… | - |
 | IFURI-019 | planned | get.ifuri.com should provide one-line host/node setup plus optional bundles such as desktop, headless node an… | - |
-| IFURI-020 | planned | planfile ticket list and the roadmap generator can read .planfile/sprints, but planfile validate schema expec… | - |
+| IFURI-020 | released | planfile ticket list and the roadmap generator can read .planfile/sprints, but planfile validate schema expec… | - |
 
 ## Sprint 1
 
