@@ -6,6 +6,11 @@
 - urirun is the primary local runtime (urirun-first dispatch; `urirun-info|scan|call|serve`).
 - Packaging today: **PyInstaller** binaries via `scripts/build-platform.py` (linux/windows/macos-arm64) → GitHub Release.
 - **Tauri scaffold present but unused**: `desktop/src-tauri` (Cargo, `tauri.conf.json`, icons) — not wired into release CI.
+- noVNC and GUI Docker compose environments exist, but they are not yet a
+  release gate for "operator can see nodes, logs, results and routes".
+- CLI audit found a likely execution gap: the `ifuri-app run` path calls
+  `dry_run_flow(...)` even when not in dry-run mode. Either wire real execution
+  or rename the command as preview-only.
 
 ## Decision: shell strategy
 - **Now:** keep PyInstaller binaries (works, already in CI) as the "app" download.
@@ -21,6 +26,10 @@
 - [ ] Auto-update channel (Tauri updater or check GitHub Releases API used by ifuri.com).
 - [ ] Surface `urirun-serve` from the GUI (start/stop local URI HTTP service).
 - [ ] `make build` / `make run` parity with CI `scripts/build-platform.py`.
+- [ ] Fix `ifuri-app run` so `--execute`/non-dry mode uses the real URI/flow
+  runner, with tests for dry-run and execute branches.
+- [ ] Add a GUI smoke that starts app + noVNC and verifies route table, logs,
+  generated workflow and result panels.
 
 ## Verify
 - `ifuri-app --help`; `pytest --ignore=tests/e2e` green (currently 82+).

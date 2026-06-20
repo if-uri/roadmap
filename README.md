@@ -6,6 +6,9 @@ GitHub-synced roadmap for the ifURI / urirun ecosystem.
 - `index.php` renders it; content is fetched from GitHub raw and cached on Plesk
   for one day (`config.php` `ttl`), so **edit on GitHub → site updates daily**, no redeploy.
 - Deploy the PHP/site: `make deploy` (rsync to the Plesk docroot, preserves cache).
+- The cross-repo execution backlog lives in `/home/tom/github/if-uri/.planfile`.
+  The current analysis is
+  [05-analysis-2026-06-20.md](05-analysis-2026-06-20.md).
 
 Sites: https://roadmap.ifuri.com · https://ifuri.com · https://docs.ifuri.com
 
@@ -19,5 +22,7 @@ Sites: https://roadmap.ifuri.com · https://ifuri.com · https://docs.ifuri.com
 - Installer: [get.ifuri.com](https://get.ifuri.com)
 - Current work summary:
   [work-summary-2026-06-20](https://github.com/if-uri/docs/blob/main/work-summary-2026-06-20.md)
+- Current cross-repo audit:
+  [05-analysis-2026-06-20](05-analysis-2026-06-20.md)
 
 Repository notes: [TODO.md](TODO.md) · [CHANGELOG.md](CHANGELOG.md)

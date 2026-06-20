@@ -2,6 +2,10 @@
 
 Cross-repo plan for the ifURI ecosystem. One file per area; check items as done.
 
+Latest audit: [05-analysis-2026-06-20.md](05-analysis-2026-06-20.md).
+Execution planning now lives in the root `/home/tom/github/if-uri/.planfile`
+so tasks can cover all repos together.
+
 ## Where we are (done)
 - **Sites live on Plesk** with repeatable deploy (`scripts/deploy-plesk.sh` + `make deploy`):
   ifuri.com, examples.ifuri.com, docs.ifuri.com, logo.ifuri.com, get.ifuri.com, connect.ifuri.com.
@@ -10,17 +14,25 @@ Cross-repo plan for the ifURI ecosystem. One file per area; check items as done.
   (`ifuri-app urirun-info|scan|call|serve`, urirun-first dispatch).
 - **App CI**: `ci.yml` (pytest 3.10–3.13 + wheel) and `build-release.yml`
   (PyInstaller binaries for linux/windows/macos-arm64 → GitHub Release).
+- **Connector seeds**: browser-control, http-check and time-tools connectors have
+  local Makefiles, tests and Docker compose smoke environments.
 
 ## What's next (by priority)
-- **P0** — finish release pipeline so downloads on ifuri.com are always fresh & trustworthy:
-  [50-cicd](50-cicd.md) (sha256 + signing + urirun release wheels), [40-urirun](40-urirun.md).
+- **P0** — make install/release/test deterministic: align urirun versions,
+  remove active `urihandler` paths, add CI for get/ifuri-com/connectors, and
+  fix the app execute-path gap. See [05](05-analysis-2026-06-20.md),
+  [40](40-urirun.md), [50](50-cicd.md).
+- **P1** — simplify the runtime boundary: keep `urirun` core small, move
+  app/host/domain integrations into app packages or connector packages, and
+  standardize `@urirun.command` discovery. See [30](30-connect-connectors.md),
+  [40](40-urirun.md).
 - **P1** — desktop packaging decision + Tauri shell, node installer parity:
   [10-app-desktop](10-app-desktop.md), [20-get-node](20-get-node.md).
-- **P1** — seed the connector hub with real integrations: [30-connect-connectors](30-connect-connectors.md).
 - **P2** — broaden reuse / integrations to other platforms: [60-reuse](60-reuse.md).
 
 ## Files
 - [10-app-desktop.md](10-app-desktop.md) — ifURI desktop app (packaging, Tauri, updates)
+- [05-analysis-2026-06-20.md](05-analysis-2026-06-20.md) — current cross-repo findings
 - [20-get-node.md](20-get-node.md) — get.ifuri.com node installer
 - [30-connect-connectors.md](30-connect-connectors.md) — connect hub + connectors
 - [40-urirun.md](40-urirun.md) — urirun packaging & releases

@@ -7,6 +7,9 @@
 - **app/.github/workflows/build-release.yml** — wheel + PyInstaller binaries
   (ubuntu-latest, windows-latest, macos-latest=arm64) → `softprops/action-gh-release` with generated notes.
 - **urirun/.github/workflows/ci.yml** — `make test`.
+- **urirun/.github/workflows/release.yml** — builds release artifacts on tags.
+- **connect.ifuri.com/.github/workflows/ci-deploy.yml** and
+  **examples/.github/workflows/e2e.yml** exist.
 
 ## Gaps → tasks
 ### Desktop app (build-release.yml)
@@ -22,6 +25,15 @@
 ### Connectors (connect.ifuri.com)
 - [ ] Validate connector manifests against `schema/*.json` on PR.
 - [ ] Build/publish `registry.json` + `search.json` artifacts.
+- [ ] Add CI to each `urirun-connector-*` repo:
+  `make test`, `make smoke`, `make docker-test`.
+- [ ] Add an install smoke that installs a connector, discovers entry points,
+  generates a registry and executes one dry-run and one allowed route.
+
+### get.ifuri.com and ifuri.com
+- [ ] `get`: GitHub Actions for `make test`, `make smoke`, `make service-smoke`.
+- [ ] `ifuri-com`: add a Makefile and workflow for HTML/PHP smoke, Docker
+  compose smoke and deploy dry-run.
 
 ### Site deploys (ifuri-com, examples, docs, logo, get, connect)
 - [ ] Optional **GitHub Actions deploy on push to main** running each repo's

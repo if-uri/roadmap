@@ -3,6 +3,9 @@
 ## [Unreleased]
 
 ### Added
+- Add 2026-06-20 cross-repo analysis covering app, get, ifuri-com, urirun and
+  current connector repositories.
+- Document root planfile usage for the multi-repository execution backlog.
 - Add repository-level TODO for roadmap site work.
 - Link README to runtime, app, docs, examples, connector hub, installer and the
   current cross-repository work summary.

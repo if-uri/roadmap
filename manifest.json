@@ -2,6 +2,7 @@
   "title": "ifURI / urirun roadmap",
   "docs": [
     {"slug": "00-roadmap", "file": "00-roadmap.md", "title": "Roadmap"},
+    {"slug": "05-analysis-2026-06-20", "file": "05-analysis-2026-06-20.md", "title": "Cross-repo analysis"},
     {"slug": "10-app-desktop", "file": "10-app-desktop.md", "title": "App — desktop"},
     {"slug": "20-get-node", "file": "20-get-node.md", "title": "get — node installer"},
     {"slug": "30-connect-connectors", "file": "30-connect-connectors.md", "title": "connect + connectors"},
