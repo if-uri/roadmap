@@ -2,6 +2,16 @@
 
 ## Roadmap site work
 
+- [ ] Keep the 2026-06-20 project-structure audit in the manifest nav and
+      regenerate `90-planfile.md` whenever `.planfile` tickets change.
+- [ ] Track IFURI-015..IFURI-019 through the roadmap until core extraction,
+      connector matrix testing, app GUI install, connector contract pages and
+      installer doctor checks are verified.
+- [ ] Track IFURI-020 until `.planfile/sprints/*.yaml` has a supported
+      validation/health-check path.
+- [ ] Review active namespace references monthly; public install commands should
+      use `github.com/if-uri/urirun`, while old `tellmesh/*` mentions should be
+      historical only.
 - [x] Publish the 2026-06-20 cross-repo analysis as a first-class roadmap page.
       (in the manifest nav and linked from 00-roadmap)
 - [x] Keep `/home/tom/github/if-uri/.planfile` as the execution backlog for

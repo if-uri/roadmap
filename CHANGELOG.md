@@ -3,6 +3,8 @@
 ## [Unreleased]
 
 ### Added
+- Add the 2026-06-20 project-structure audit with repository map, runtime
+  boundary, priorities and new planfile tickets IFURI-015..IFURI-020.
 - Add 2026-06-20 cross-repo analysis covering app, get, ifuri-com, urirun and
   current connector repositories.
 - Document root planfile usage for the multi-repository execution backlog.
@@ -13,3 +15,4 @@
 ### Changed
 - Document roadmap.ifuri.com as the planning layer for the broader ifURI /
   urirun ecosystem.
+- Point active roadmap runtime references at the `if-uri/urirun` namespace.

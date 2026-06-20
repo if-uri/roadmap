@@ -2,7 +2,7 @@
 
 Generated from the shared execution backlog at `if-uri/.planfile`. Status comes from each ticket's execution state. This page is regenerated - edit tickets in the planfile, not here.
 
-Tickets: 13 (planned: 7 · released: 6). Last generated 2026-06-20.
+Tickets: 19 (planned: 13 · released: 6). Last generated 2026-06-20.
 
 Status values: **planned** (queued/not started), **in-progress** (running), **verified** (acceptance checks passed), **released** (execution done).
 
@@ -16,6 +16,12 @@ Status values: **planned** (queued/not started), **in-progress** (running), **ve
 | IFURI-011 | planned | The main public site should have the same local commands and workflow gates as get/connect/docs: smoke, docke… | - |
 | IFURI-012 | planned | Move the important real-world integrations into connector packages and catalog pages so users can install cap… | - |
 | IFURI-013 | planned | Improve connector discovery for humans, search engines and LLM agents with dedicated pages, route/schema exam… | - |
+| IFURI-015 | planned | Finish the split between urirun core, connectors and app/host | - |
+| IFURI-016 | planned | Run every available connector in a repeatable Docker environment with host, pc1 and pc2 | - |
+| IFURI-017 | planned | The desktop/web operator UI should consume the connector hub catalog, install selected connector packages, re… | - |
+| IFURI-018 | planned | Each connector page should show install snippets, supported URI routes, payload schemas, Docker smoke command… | - |
+| IFURI-019 | planned | get.ifuri.com should provide one-line host/node setup plus optional bundles such as desktop, headless node an… | - |
+| IFURI-020 | planned | planfile ticket list and the roadmap generator can read .planfile/sprints, but planfile validate schema expec… | - |
 
 ## Sprint 1
 
