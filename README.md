@@ -14,7 +14,7 @@ Sites: https://roadmap.ifuri.com · https://ifuri.com · https://docs.ifuri.com
 
 ## Related projects
 
-- Runtime: [tellmesh/urirun](https://github.com/tellmesh/urirun)
+- Runtime: [if-uri/urirun](https://github.com/if-uri/urirun)
 - App/host: [if-uri/app](https://github.com/if-uri/app)
 - Public docs: [if-uri/docs](https://github.com/if-uri/docs)
 - Examples and noVNC demos: [if-uri/examples](https://github.com/if-uri/examples)

@@ -10,7 +10,7 @@ so tasks can cover all repos together.
 - **Sites live on Plesk** with repeatable deploy (`scripts/deploy-plesk.sh` + `make deploy`):
   ifuri.com, examples.ifuri.com, docs.ifuri.com, logo.ifuri.com, get.ifuri.com, connect.ifuri.com.
 - **Brand**: unified palette (indigo/emerald/slate) + theme-aware logo; copy buttons on code; PWA, SEO (sitemap/robots), 404, a11y, contact+privacy.
-- **urirun**: renamed `tellmesh/urirun`; v1/v2 runtime; integrated into the app
+- **urirun**: renamed `if-uri/urirun`; v1/v2 runtime; integrated into the app
   (`ifuri-app urirun-info|scan|call|serve`, urirun-first dispatch).
 - **App CI**: `ci.yml` (pytest 3.10–3.13 + wheel) and `build-release.yml`
   (PyInstaller binaries for linux/windows/macos-arm64 → GitHub Release).
