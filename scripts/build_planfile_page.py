@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# Author: Tom Sapletta · https://tom.sapletta.com
+# Part of the ifURI solution.
+
 """Generate 90-planfile.md from the shared execution backlog.
 
 Reads the planfile sprints at if-uri/.planfile/sprints/*.yaml and renders a
