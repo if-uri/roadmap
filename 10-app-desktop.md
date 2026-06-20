@@ -20,12 +20,17 @@
 - [x] Decide PyInstaller-only vs Tauri-shell — decided "both shells": PyInstaller
   binaries + Tauri bundling enabled (tauri-release CI).
 - [ ] Tauri: load the app's web UI (`src/ifuri_app/web/`) against the local runtime; bundle/spawn the Python runtime (sidecar) or require `pip install ifuri`.
-- [ ] App icons/splash from brand kit (`if-uri/logo` → `png/icon/*`, `ico/favicon.ico`).
+- [x] App icons/splash from brand kit (`if-uri/logo` → `png/icon/*`, `ico/favicon.ico`).
+  (assets/icon.png set as the Tk window icon at runtime; assets/icon.ico used as
+  the PyInstaller exe icon on Windows; bundled via package-data + --add-data.)
 - [x] First-run wizard: `init --scan-lan`, pick/registry urirun, set node endpoint.
   (gui.FirstRunWizard — scan LAN, pick/type node endpoint, save; shown once.)
 - [~] Node/daemon mode: ship `systemd/` unit + a Windows service / launchd plist.
   (systemd user units + launchd plist present in `systemd/`; Windows service TODO.)
-- [ ] Optional extras packaging: voice (stt/tts), webrtc — keep optional to keep base small.
+- [x] Optional extras packaging: voice (stt/tts), webrtc — keep optional to keep base small.
+  (Already satisfied: base `dependencies = []`; the app's voice_pipeline/webrtc_pipeline
+  are stdlib-only — actual STT/TTS/WebRTC run node-side as urirun packs / served wheels,
+  not as app deps. Extras: flows, packs, urirun.)
 - [ ] Auto-update channel (Tauri updater or check GitHub Releases API used by ifuri.com).
 - [x] Surface `urirun-serve` from the GUI (start/stop local URI HTTP service).
   (Services tab: Start/Stop/Routes for urirun-serve.)
@@ -34,9 +39,12 @@
 - [x] Fix `ifuri-app run` so `--execute`/non-dry mode uses the real URI/flow
   runner, with tests for dry-run and execute branches.
   (cmd_run routes to RuntimeState; tests/test_cli_run.py covers dry-run + execute.)
-- [~] Add a GUI smoke that starts app + noVNC and verifies route table, logs,
-  generated workflow and result panels. (Headless xvfb GUI smokes cover route
-  tables / payload forms / result+log panels; full app+noVNC Docker smoke TODO.)
+- [x] Add a GUI smoke that starts app + noVNC and verifies route table, logs,
+  generated workflow and result panels. (`make smoke-novnc` brings up
+  examples/11-novnc_lan_flow then drives the GUI headless against the live node:
+  scripts/gui_smoke.py checks the Konektory route table (app/browser/log from the
+  live node), run-log panel, runtime start and dry-run workflow graph. Verified
+  green against the running stack.)
 
 ## Verify
 - `ifuri-app --help`; `pytest --ignore=tests/e2e` green (currently 82+).
