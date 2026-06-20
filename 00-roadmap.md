@@ -33,6 +33,9 @@ so tasks can cover all repos together.
   app/host/domain integrations into app packages or connector packages, and
   standardize `@urirun.command` discovery. See [30](30-connect-connectors.md),
   [40](40-urirun.md), tickets IFURI-015 and IFURI-016.
+- **P1** — make runtime failures searchable and actionable through built-in
+  `error://` diagnostics: stable codes, categories, fix hints, registry routes
+  and ticket creation. See [40](40-urirun.md), ticket IFURI-021.
 - **P1** — desktop packaging decision + Tauri shell, node installer parity:
   [10-app-desktop](10-app-desktop.md), [20-get-node](20-get-node.md).
 - **P2** — broaden reuse / integrations to other platforms: [60-reuse](60-reuse.md).
@@ -51,6 +54,7 @@ Each entry links its repository, docs page and a demo command.
 | --- | --- | --- | --- | --- |
 | noVNC LAN flow (four computers) | released | [examples/11-novnc_lan_flow](https://github.com/if-uri/examples/tree/main/11-novnc_lan_flow) | [docs.ifuri.com/novnc-demo.html](https://docs.ifuri.com/novnc-demo.html) | `make test-full` |
 | Connector install / discovery | released | [if-uri/connect.ifuri.com](https://github.com/if-uri/connect.ifuri.com) | [docs.ifuri.com/connectors.html](https://docs.ifuri.com/connectors.html) | `urirun discover --registry-out .urirun/connectors.registry.json` |
+| Runtime error diagnostics | verified | [if-uri/urirun](https://github.com/if-uri/urirun) | [docs.ifuri.com/errors.html](https://docs.ifuri.com/errors.html) | `urirun errors recent` |
 | get.ifuri.com node installer | released | [if-uri/get](https://github.com/if-uri/get) | [docs.ifuri.com/host-node-lan.html](https://docs.ifuri.com/host-node-lan.html) | `get.ifuri.com/node.sh` |
 | Planfile validation / health | released | [semcod/planfile](https://github.com/semcod/planfile) | [90-planfile.md](90-planfile.md) | `planfile validate schema .planfile/sprints/current.yaml --file-type sprint` |
 

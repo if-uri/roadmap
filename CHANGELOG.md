@@ -20,3 +20,5 @@
   `urirun discover` / `urirun compile --entry-points` workflow.
 - Mark IFURI-020 as released and document the validated planfile sprint/health
   commands.
+- Add IFURI-021 for built-in `error://` diagnostics and document the CLI,
+  registry route and ticketing workflow in the urirun roadmap.

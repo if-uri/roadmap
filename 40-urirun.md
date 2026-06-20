@@ -23,6 +23,12 @@
   fails if Python, root and JS metadata disagree.
 - [x] **Stable public Python API**: expose `urirun.command`, registry helpers and
   connector discovery from `urirun`, not `urirun.v2`.
+- [x] **Built-in diagnostics**: standardize `error://` runtime failures with
+  stable codes, categories, fix hints, CLI search/info/recent commands,
+  registry-ready bindings and planfile ticket conversion.
+- [x] **Compatibility migration guard**: add `urirun compat list/check` so
+  downstream projects can see which legacy modules move to connectors or the
+  app layer before the files are physically removed from core.
 - [ ] **Core split**: move host/dashboard/mesh/planner/domain integrations out
   of the core release path. Current state: implementation moved behind lazy
   wrappers; final work is extracting planfile/data/domain bindings into
