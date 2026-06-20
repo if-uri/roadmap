@@ -30,6 +30,22 @@ so tasks can cover all repos together.
   [10-app-desktop](10-app-desktop.md), [20-get-node](20-get-node.md).
 - **P2** — broaden reuse / integrations to other platforms: [60-reuse](60-reuse.md).
 
+## Status board
+Live ticket status — planned, in-progress, verified, released — is generated
+from the shared execution backlog and published as
+[90-planfile.md](90-planfile.md). Tickets cover app, get, ifuri-com, urirun and
+connector work together, aligned with the
+[work summary](https://github.com/if-uri/docs/blob/main/work-summary-2026-06-20.md).
+
+## Demos and shipped features
+Each entry links its repository, docs page and a demo command.
+
+| Area | Status | Repo | Docs | Demo |
+| --- | --- | --- | --- | --- |
+| noVNC LAN flow (four computers) | released | [examples/11-novnc_lan_flow](https://github.com/if-uri/examples/tree/main/11-novnc_lan_flow) | [docs.ifuri.com/novnc-demo.html](https://docs.ifuri.com/novnc-demo.html) | `make test-full` |
+| Connector install / discovery | in-progress | [if-uri/connect.ifuri.com](https://github.com/if-uri/connect.ifuri.com) | [docs.ifuri.com/connectors.html](https://docs.ifuri.com/connectors.html) | `connect.ifuri.com/install?connectors=http-check` |
+| get.ifuri.com node installer | released | [if-uri/get](https://github.com/if-uri/get) | [docs.ifuri.com/host-node-lan.html](https://docs.ifuri.com/host-node-lan.html) | `get.ifuri.com/node.sh` |
+
 ## Files
 - [10-app-desktop.md](10-app-desktop.md) — ifURI desktop app (packaging, Tauri, updates)
 - [05-analysis-2026-06-20.md](05-analysis-2026-06-20.md) — current cross-repo findings
@@ -38,6 +54,7 @@ so tasks can cover all repos together.
 - [40-urirun.md](40-urirun.md) — urirun packaging & releases
 - [50-cicd.md](50-cicd.md) — CI/CD for multiplatform builds + integrations
 - [60-reuse.md](60-reuse.md) — where ifURI/urirun can be re-used
+- [90-planfile.md](90-planfile.md) — generated ticket status from the execution backlog
 
 ## Open decisions (need owner sign-off)
 1. Desktop shell: **PyInstaller (now)** vs **Tauri (next)** vs both. → [10](10-app-desktop.md)
