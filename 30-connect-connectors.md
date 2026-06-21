@@ -33,14 +33,25 @@ kvm, llm, …) → bridges into a **urirun binding/registry** the app/flows can 
   (`scripts/validate_connectors.py` — 13 manifests + catalog, 0 errors; in `ci-deploy.yml`.)
 - [x] **Connector detail pages**: route list, schemas, install command, examples,
   JSON-LD and links to source/tests for each connector. (`/connectors/{id}.json` live, valid JSON.)
-- [ ] **Submit flow**: harden `POST /validate-connector`; rate-limit; spam guard for `/submit`.
-- [ ] **Signing/trust**: optional signed manifests + a "verified" badge.
+- [x] **Submit flow**: harden `POST /validate-connector`; rate-limit; spam guard for `/submit`.
+  (lib/hub.php hub_rate_limit + hub_client_ip; api/validate_connector.php enforces
+  POST-only (405), per-IP sliding-window rate limit (429 + Retry-After), 64 KB body
+  cap (413) and JSON depth cap 32. Verified live: 429 after limit, 413 on >64 KB, 405 on GET.)
+- [x] **Signing/trust**: optional signed manifests + a "verified" badge.
+  (Ed25519/libsodium: `scripts/sign-manifest.php` keygen/sign/verify; manifests carry
+  a detached `trust` signature over the canonical manifest; `lib/hub.php`
+  hub_manifest_verified checks it against `data/publishers.json`; signature-backed
+  badge in index/connector pages; `verified` flag in `/registry.json`; schema allows
+  the `trust` block; `tests/sign_test.php` in the smoke suite. Verified end to end:
+  sign→verify, tamper-detection, unknown-publisher rejection.)
 - [x] **Discovery**: project the catalog to **MCP tools/list** and an **A2A agent card**
   (`registry.json` already machine-readable) so agents can find connectors.
   (Live: `/mcp.json` and `/a2a.json` return valid JSON.)
 - [x] **SEO**: confirm `sitemap.php`/`robots.php` output; link from ifuri.com.
   (Live: `/sitemap.xml` and `/robots.txt` → HTTP 200.)
-- [ ] Cache `data/` catalog; document the `data/` directory (kept on deploy).
+- [x] Cache `data/` catalog; document the `data/` directory (kept on deploy).
+  (JSON endpoints send `Cache-Control: public, max-age=120`; added `data/README.md`
+  documenting the manifest→catalog workflow and that `data/` is preserved on deploy.)
 
 ## Verify
 - connect.ifuri.com/ 200; `/connectors.json`, `/registry.json`, `/search.json` valid JSON;
