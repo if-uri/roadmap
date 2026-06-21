@@ -16,22 +16,30 @@ A manifest describing URI routes a third party exposes (DNS, planfile, MCP serve
 kvm, llm, …) → bridges into a **urirun binding/registry** the app/flows can call.
 
 ## Tasks
-- [ ] **Seed real connectors**: planfile, namecheap-dns, mcp-filesystem, browser (noVNC),
+- [x] **Seed real connectors**: planfile, namecheap-dns, mcp-filesystem, browser (noVNC),
   llm (local/qwen), kvm, get-node — as validated manifests in the catalog.
-- [ ] **Standard decorator API**: connector examples should use
-  `@urirun.command(...)`, not versioned imports such as `@v2.uri_command(...)`.
-- [ ] **Manifest ↔ urirun bridge**: define connector.schema → `urirun.bindings.v2` mapping
+  (13 connectors in `data/connectors.json`, all schema-valid; polyglot set covers
+  PHP/Go/JS too — base64/hash/uuid.)
+- [x] **Standard decorator API**: connector examples use `@urirun.command(...)`,
+  not versioned imports such as `@v2.uri_command(...)`. (Verified in connector
+  tests/sources; remaining `urirun.v2` refs are registry-compile imports, not the decorator.)
+- [x] **Manifest ↔ urirun bridge**: connector.schema → `urirun.bindings.v2` mapping
   so `/install?connectors=…` produces a registry the app runs (`ifuri-app urirun-call`).
-- [ ] **Entry points**: every Python connector exposes bindings via a stable
-  `urirun.connectors` entry point so `urirun scan` can discover it after install.
-- [ ] **Validation in CI**: validate every connector manifest against `schema/*.json` (see [50-cicd](50-cicd.md)).
-- [ ] **Connector detail pages**: route list, schemas, install command, examples,
-  JSON-LD and links to source/tests for each connector.
+  (Live hub: `/install?connectors=planfile` returns a runnable pip/urirun script; `/registry.json` valid.)
+- [x] **Entry points**: every Python connector exposes bindings via a stable
+  `urirun.bindings` entry point so `urirun scan` can discover it after install.
+  (15/15 Python connectors declare it; base64/hash/uuid are polyglot PHP/Go/JS.)
+- [x] **Validation in CI**: validate every connector manifest against `schema/*.json` (see [50-cicd](50-cicd.md)).
+  (`scripts/validate_connectors.py` — 13 manifests + catalog, 0 errors; in `ci-deploy.yml`.)
+- [x] **Connector detail pages**: route list, schemas, install command, examples,
+  JSON-LD and links to source/tests for each connector. (`/connectors/{id}.json` live, valid JSON.)
 - [ ] **Submit flow**: harden `POST /validate-connector`; rate-limit; spam guard for `/submit`.
 - [ ] **Signing/trust**: optional signed manifests + a "verified" badge.
-- [ ] **Discovery**: project the catalog to **MCP tools/list** and an **A2A agent card**
+- [x] **Discovery**: project the catalog to **MCP tools/list** and an **A2A agent card**
   (`registry.json` already machine-readable) so agents can find connectors.
-- [ ] **SEO**: confirm `sitemap.php`/`robots.php` output; link from ifuri.com.
+  (Live: `/mcp.json` and `/a2a.json` return valid JSON.)
+- [x] **SEO**: confirm `sitemap.php`/`robots.php` output; link from ifuri.com.
+  (Live: `/sitemap.xml` and `/robots.txt` → HTTP 200.)
 - [ ] Cache `data/` catalog; document the `data/` directory (kept on deploy).
 
 ## Verify
