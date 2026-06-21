@@ -54,7 +54,7 @@ function e(string $s): string { return htmlspecialchars($s, ENT_QUOTES); }
     <p class="synced">Synced from <a href="<?= e($ghFile) ?>">GitHub</a> · last update <?= e($synced) ?> · source: <?= e($doc['source']) ?>. Edit on GitHub; this page refreshes once a day.</p>
   </main>
 </div>
-<footer>ifURI roadmap · synced from <a href="<?= e($ghDir) ?>"><?= e($cfg['owner'] . '/' . $cfg['repo']) ?></a> · <a href="https://ifuri.com/">ifuri.com</a></footer>
+<footer>ifURI roadmap · synced from <a href="<?= e($ghDir) ?>"><?= e($cfg['owner'] . '/' . $cfg['repo']) ?></a> · <a href="https://ifuri.com/">ifuri.com</a> · © 2026 <a href="https://ifuri.com">ifuri.com</a> / <a href="https://tom.sapletta.com">Tom Sapletta</a></footer>
 <script src="https://ifuri.com/assets/ifuri-ecobar.js" defer></script>
 </body>
 </html>
