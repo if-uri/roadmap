@@ -22,6 +22,14 @@ function e(string $s): string { return htmlspecialchars($s, ENT_QUOTES); }
 <title><?= e($title ?: 'roadmap') ?> · ifURI roadmap</title>
 <meta name="description" content="ifURI / urirun roadmap, synced from GitHub.">
 <meta name="theme-color" content="#1E1B4B">
+<link rel="canonical" href="https://roadmap.ifuri.com/">
+<meta property="og:title" content="ifURI / urirun roadmap">
+<meta property="og:description" content="ifURI / urirun roadmap, synced from GitHub.">
+<meta property="og:image" content="https://ifuri.com/assets/og-ifuri.png">
+<meta property="og:url" content="https://roadmap.ifuri.com/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://ifuri.com/assets/og-ifuri.png">
+<script type="application/ld+json"><?= json_encode(['@context'=>'https://schema.org','@type'=>'WebSite','name'=>'ifURI roadmap','url'=>'https://roadmap.ifuri.com/','description'=>'ifURI / urirun roadmap, synced from GitHub.'], JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE) ?></script>
 <link rel="icon" href="https://ifuri.com/assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="style.css">
 </head>
