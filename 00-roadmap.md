@@ -10,6 +10,9 @@ so tasks can cover all repos together.
 ## Where we are (done)
 - **Sites live on Plesk** with repeatable deploy (`scripts/deploy-plesk.sh` + `make deploy`):
   ifuri.com, examples.ifuri.com, docs.ifuri.com, logo.ifuri.com, get.ifuri.com, connect.ifuri.com.
+- **Marketing & content stack** (new): marketing.ifuri.com (webinar scheduler),
+  meet.ifuri.com (Jitsi redirect + booking), live.ifuri.com (YouTube + webinar live).
+  blog.ifuri.com (markdown → WordPress) in progress. See [70-marketing](70-marketing.md).
 - **Brand**: unified palette (indigo/emerald/slate) + theme-aware logo; copy buttons on code; PWA, SEO (sitemap/robots), 404, a11y, contact+privacy.
 - **urirun**: moved under `if-uri/urirun`; v1/v2 runtime; integrated into the app
   (`ifuri-app urirun-info|scan|call|serve`, urirun-first dispatch).
@@ -39,6 +42,9 @@ so tasks can cover all repos together.
 - **P1** — desktop packaging decision + Tauri shell, node installer parity:
   [10-app-desktop](10-app-desktop.md), [20-get-node](20-get-node.md).
 - **P2** — broaden reuse / integrations to other platforms: [60-reuse](60-reuse.md).
+- **P1** — turn on the marketing funnel: publish blog (WordPress key), configure
+  SMTP, redeploy meet/live, dogfood connectors to monitor our own sites.
+  See [70-marketing](70-marketing.md).
 
 ## Status board
 Live ticket status — planned, in-progress, verified, released — is generated
@@ -67,6 +73,7 @@ Each entry links its repository, docs page and a demo command.
 - [40-urirun.md](40-urirun.md) — urirun packaging & releases
 - [50-cicd.md](50-cicd.md) — CI/CD for multiplatform builds + integrations
 - [60-reuse.md](60-reuse.md) — where ifURI/urirun can be re-used
+- [70-marketing.md](70-marketing.md) — marketing & content surfaces (marketing/meet/live/blog)
 - [90-planfile.md](90-planfile.md) — generated ticket status from the execution backlog
 
 ## Open decisions (need owner sign-off)

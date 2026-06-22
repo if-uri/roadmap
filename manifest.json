@@ -10,6 +10,7 @@
     {"slug": "40-urirun", "file": "40-urirun.md", "title": "urirun packaging"},
     {"slug": "50-cicd", "file": "50-cicd.md", "title": "CI/CD"},
     {"slug": "60-reuse", "file": "60-reuse.md", "title": "Reuse / integrations"},
+    {"slug": "70-marketing", "file": "70-marketing.md", "title": "Marketing & content"},
     {"slug": "90-planfile", "file": "90-planfile.md", "title": "Planfile tickets"}
   ]
 }
