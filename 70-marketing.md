@@ -6,7 +6,7 @@ The product had no marketing/content layer in this roadmap. As of 2026‑06,
 a content + funnel stack is built and (partly) deployed on Plesk, separate from
 the engineering repos:
 
-- **marketing.ifuri.com** (`if-uri/marketing` → `calendar/`) — webinar scheduler:
+- **calendar.ifuri.com** (`if-uri/calendar`) — webinar scheduler:
   events as `RRRR-MM/*.json`, iCalendar feed, SMTP mailer, liteLLM drafting,
   Meet/Teams/Jitsi links, booking. **Basic Auth** (operational data, non‑public).
 - **meet.ifuri.com** (`if-uri/meet`) — Jitsi redirect with public/private rooms
