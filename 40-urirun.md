@@ -14,9 +14,14 @@
 - `urirun adopt-pack` gives an existing package a URI surface from its manifest,
   `[tool.urirun]`/`package.json`, or CLI entry points — see [adopt-as-uri](../docs/adopt-as-uri.md).
 - Routing is param-aware: concrete URIs resolve templated mid-path `{param}` segments.
-- Core package still includes host/app/domain modules (`mesh`, dashboard,
-  host DB, planfile, Namecheap, domain monitor). This should be split behind
-  optional extras or connector packages.
+- Core split landed (IFURI-007). A bare `import urirun` loads no host/node/domain
+  modules — the legacy `mesh`/`host_dashboard`/`host_db`/`domain_monitor`/
+  `planfile_adapter`/`scheduler`/`task_planner`/`host_integrations` names are
+  back-compat shims, `namecheap_dns` was removed, and the real implementations
+  live behind lazy imports in `urirun.host` / `urirun.node`. The shared host/node
+  backend (host_db, planfile, domain_monitor — reused by sqlite-context etc.) is
+  intentionally kept in core; Namecheap/domain-monitor/planfile **bindings** are
+  owned by their connector packages.
 - `urirun.v2` no longer stores the host/domain binding implementations
   directly. It delegates through lazy compatibility wrappers to
   `urirun.host_integrations`, and a minimal-import test prevents eager loading
@@ -44,10 +49,12 @@
   data-driven conformance check (structural + functional execution pass).
 - [x] **Release bump tooling**: `make release-bump V=X.Y.Z` reconciles all five
   version files and opens a CHANGELOG section.
-- [~] **Core split (IFURI-007)**: runtime split into `urirun.runtime.*` with
-  `host`/`connector` subpackages and back-compat shims landed; remaining work is a
-  green compat suite (`test_compat` must pass without each extracted connector
-  installed) and finishing the planfile/domain extraction into connector packages.
+- [x] **Core split (IFURI-007)**: runtime split into `urirun.runtime.*` with
+  `host`/`connector` subpackages and back-compat shims landed; the compat suite
+  (`test_compat` — 8 tests, green) reports `ok` with namecheap extracted and the
+  host/node backend kept, and the planfile/domain-monitor/namecheap connector
+  packages own their bindings. Verified by `test_minimal_imports.py`,
+  `test_core_import_smoke.py` and the full suite (1733 passed).
 - [ ] **Optional PyPI**: `twine upload` job behind a `PYPI_TOKEN` secret (decision in [00](00-roadmap.md)).
 - [ ] **npm package** for `adapters/js` (`urirun` JS) → publish on tag (decision).
 - [ ] **C adapter**: ship `urirun.c/.h` as a release asset for firmware reuse.
